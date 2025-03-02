@@ -1,0 +1,65 @@
+/* Basic Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+/* Button Container */
+.container {
+    text-align: center;
+}
+
+/* Button Styling */
+.animated-button {
+    background-color: #e21694; /* Initial Color */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.4s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect with Different Color */
+.animated-button:hover {
+    background-color: #e74c3c; /* Updated Color on Hover */
+    color: #bde716;
+    transform: scale(1.1);
+}
+
+/* Optional Ripple Animation */
+.animated-button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.75s;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.animated-button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Active State */
+.animated-button:active {
+    transform: scale(1.05);
+}
